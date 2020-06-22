@@ -131,7 +131,7 @@
             $('.toast' + _t1 + ' .close').click(function() {
               
               createToast('toast' + _toastCnt, _boss + ': graph chart for this evening', 'Hey Bob,' + 
-              ' the deadline for that stock graph is this evening, I am expecting great things from you!');
+              ' the deadline for that contract summary is this evening, I am expecting great things from you!');
               
               if (!_reportWasSent) {
                 setTimeout(function() {
@@ -160,7 +160,7 @@
                   updateStoryLine('<p>Report that you have been working on for the last week just gone without a trace...</p>');
 
                   createToast('toast' + _toastCnt, _ceo + ': Hey Bob where is that report??????', 
-                  'Hey Bob where is that report?????? Everybody is waiting for it. We are in the boardroom.' + 
+                  'Hey Bob where is that report?????? Everybody is waiting for it. We are in the boardroom.<br/>' + 
                         (_reportWasDeleted ? '<a class="btn btn-danger" href="page103.html">Tell him you deleted it</a>' : '')
                   );
 
@@ -206,9 +206,19 @@
                   'picking up that old template or something?';
                 _sharedBadReport = true;
               }
-
+              
               setTimeout(function() {
                 createToast('toast' + _toastCnt, _ceo + ': ' + _subject,  _body);
+
+                if (_reportWasSent) {
+                  setTimeout(function() {
+                    createToast('toast' + _toastCnt, 'Scott Whittaker' + ': ' +  'Lunch',  'Hi Bob, want to join me at lunch and watch the games?<br/>' + 
+                    '<a class="btn btn-secondary" href="page004.html">Go to have your lunch</a>');
+
+                  }, 3000);
+
+                }
+
                }, 2000);
 
 
